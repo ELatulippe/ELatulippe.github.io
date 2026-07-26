@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Other — Étienne Latulippe</title>
+<!-- Two stylesheet lines below: keep whichever matches where style.css actually sits, delete the other. -->
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="index.html">Étienne Latulippe</a>
+    <nav class="nav">
+      <a href="index.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="other.html" class="active">Other</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <img class="headshot" src="files/headshot.jpg" alt="Étienne Latulippe">
+      <hr>
+      <p><span class="label">Email:</span><br>
+         <a href="mailto:elatulip@student.ubc.ca">elatulip@student.ubc.ca</a></p>
+      <p class="links">
+        <a href="cv.html">CV</a>
+        <a href="https://github.com/ELatulippe">GitHub</a>
+      </p>
+      <hr>
+    </aside>
+
+    <main>
+      <p class="intro">
+        Code, replications, and side projects that sit outside my main research
+        agenda.
+      </p>
+
+      <h2>Conditional Forecasts and Risk Scenarios</h2>
+
+      <div class="paper">
+        <span class="title">A MATLAB toolbox for conditional forecasting in Bayesian VARs</span>
+        <span class="outlet">Replication and extension, 2026</span>
+        <details class="abstract">
+          <summary>Description</summary>
+          <p>
+            A self-contained MATLAB package that replicates and extends the risk-scenario
+            exercise of Moran, Stevanovic and Surprenant (2025), Bank of Canada Staff
+            Working Paper 2025&ndash;28, <em>Risk Scenarios and Macroeconomic Forecasts</em>.
+            It estimates a monthly Bayesian VAR under a Minnesota prior, produces a
+            baseline forecast, and imposes alternative paths for selected variables using
+            the Waggoner&ndash;Zha conditional forecasting algorithm, with the
+            Baumeister&ndash;Kilian approach available as a robustness check. Four scenarios
+            are implemented out of the box &mdash; an oil price spike, a US recession, a
+            tight labour market, and an additional round of monetary tightening &mdash;
+            alongside forecast error variance decompositions and structural impulse
+            responses. Canadian data come from Statistics Canada and FRED. The code runs
+            without any MATLAB toolbox and is compatible with Octave.
+            [Edit this description as you like.]
+          </p>
+        </details>
+        <p class="filelinks">
+          <a href="https://github.com/ELatulippe">Code</a>
+          <a href="files/risk_scenarios_notes.pdf">Notes</a>
+        </p>
+      </div>
+
+      <div class="footer">
+        Last updated July 2026.
+      </div>
+    </main>
+
+  </div>
+</div>
+</body>
+</html>
