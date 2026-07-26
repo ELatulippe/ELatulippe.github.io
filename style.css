@@ -1,0 +1,230 @@
+/* ---------------------------------------------------------------
+   Minimal academic site — two-column layout
+   Edit the variables below to restyle the whole site at once.
+   --------------------------------------------------------------- */
+
+:root {
+  --ink: #1b1b1b;
+  --muted: #5c5c5c;
+  --rule: #d8d8d8;
+  --link: #1f4e79;
+  --link-hover: #0d2f4f;
+  --bg: #ffffff;
+  --max-width: 940px;
+  --sidebar: 220px;
+  --serif: Georgia, "Times New Roman", Times, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 34px 0 18px;
+}
+
+.masthead .name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.masthead .name:hover { text-decoration: none; }
+
+.nav {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+
+.nav a { margin-left: 22px; }
+
+.nav a:first-child { margin-left: 0; }
+
+.nav a.active {
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 2px;
+}
+
+.nav a.active:hover { text-decoration: none; }
+
+/* ---------- two-column body ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.sidebar { font-size: 0.95rem; }
+
+.sidebar img.headshot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--rule);
+}
+
+.sidebar hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 20px 0;
+}
+
+.sidebar p { margin: 0 0 8px; }
+
+.sidebar .label { font-weight: 600; }
+
+.sidebar .links a { display: block; margin-bottom: 6px; }
+
+/* ---------- main column ---------- */
+
+.intro { margin-top: 0; }
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 34px 0 14px;
+}
+
+h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin: 26px 0 6px;
+}
+
+main hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 30px 0;
+}
+
+.paper { margin-bottom: 26px; }
+
+.paper .title {
+  font-weight: 600;
+  display: block;
+}
+
+.paper .authors,
+.paper .outlet {
+  color: var(--muted);
+  font-size: 0.95rem;
+  display: block;
+}
+
+.paper .outlet { font-style: italic; }
+
+.paper .filelinks {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  margin-top: 6px;
+}
+
+.paper .filelinks a { margin-right: 14px; }
+
+details.abstract { margin-top: 8px; }
+
+details.abstract summary {
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--link);
+  list-style: none;
+  display: inline-block;
+}
+
+details.abstract summary::-webkit-details-marker { display: none; }
+
+details.abstract summary::before {
+  content: "▸ ";
+  font-size: 0.8em;
+}
+
+details.abstract[open] summary::before { content: "▾ "; }
+
+details.abstract summary:hover { text-decoration: underline; }
+
+details.abstract p {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+  color: #2c2c2c;
+  border-left: 2px solid var(--rule);
+  padding-left: 14px;
+}
+
+/* ---------- teaching / CV lists ---------- */
+
+.entry { margin-bottom: 18px; }
+
+.entry .role { font-weight: 600; }
+
+.entry .meta { color: var(--muted); font-size: 0.95rem; }
+
+ul.plain { padding-left: 20px; margin: 8px 0; }
+
+ul.plain li { margin-bottom: 6px; }
+
+.footer {
+  margin-top: 56px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .sidebar img.headshot {
+    max-width: 190px;
+    margin: 0 auto;
+  }
+  .sidebar { text-align: center; }
+  .sidebar .links a { display: inline-block; margin: 0 10px 6px; }
+  .masthead { padding-top: 24px; }
+}
