@@ -7,6 +7,35 @@
 <!-- Two stylesheet lines below: keep whichever matches where style.css actually sits, delete the other. -->
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* scoped styles for the project image strip — no changes to style.css needed */
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 14px 0 4px;
+  }
+  .gallery figure {
+    margin: 0;
+  }
+  .gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--rule, #d8d8d8);
+    background: #fff;
+  }
+  .gallery figcaption {
+    font-family: var(--sans, sans-serif);
+    font-size: 0.8rem;
+    color: var(--muted, #5c5c5c);
+    margin-top: 6px;
+    line-height: 1.45;
+  }
+  @media (max-width: 720px) {
+    .gallery { grid-template-columns: 1fr; gap: 14px; }
+  }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -42,29 +71,55 @@
       <h2>Conditional Forecasts and Risk Scenarios</h2>
 
       <div class="paper">
-        <span class="title">A MATLAB toolbox for conditional forecasting in Bayesian VARs</span>
-        <span class="outlet">Replication and extension, 2026</span>
+        <span class="title">Conditional forecasting with uncertainty in a monetary VAR</span>
+        <span class="outlet">MATLAB toolbox &amp; interactive dashboard, 2026</span>
+
+        <div class="gallery">
+          <figure>
+            <img src="ConditionalForecast/figures/joint_scenarios/figure5_bands_stagflation.png"
+                 alt="Joint stagflation scenario fan chart">
+            <figcaption>
+              A joint stagflation scenario: prices and unemployment are pinned at once,
+              and the fan shows the uncertainty that remains around the rest of the system.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="ConditionalForecast/figures/counterfactual/tighter_boc_price_unemp.png"
+                 alt="Historical counterfactual: tighter Bank of Canada">
+            <figcaption>
+              A historical counterfactual: the price level and unemployment paths Canada
+              would have seen had the Bank tightened an extra 100&nbsp;bp in 2022.
+            </figcaption>
+          </figure>
+        </div>
+
         <details class="abstract">
           <summary>Description</summary>
           <p>
-            A self-contained MATLAB package that replicates and extends the risk-scenario
-            exercise of Moran, Stevanovic and Surprenant (2025), Bank of Canada Staff
-            Working Paper 2025&ndash;28, <em>Risk Scenarios and Macroeconomic Forecasts</em>.
-            It estimates a monthly Bayesian VAR under a Minnesota prior, produces a
-            baseline forecast, and imposes alternative paths for selected variables using
-            the Waggoner&ndash;Zha conditional forecasting algorithm, with the
-            Baumeister&ndash;Kilian approach available as a robustness check. Four scenarios
-            are implemented out of the box &mdash; an oil price spike, a US recession, a
-            tight labour market, and an additional round of monetary tightening &mdash;
-            alongside forecast error variance decompositions and structural impulse
-            responses. Canadian data come from Statistics Canada and FRED. The code runs
-            without any MATLAB toolbox and is compatible with Octave.
-            [Edit this description as you like.]
+            A self-contained MATLAB package that replicates and then extends the
+            risk-scenario exercise of Moran, Stevanovic and Surprenant (2025), Bank of
+            Canada Staff Working Paper 2025&ndash;28, <em>Risk Scenarios and Macroeconomic
+            Forecasts</em>. A monthly Bayesian VAR for Canada is estimated under a Minnesota
+            prior, and alternative paths for selected variables are imposed with the
+            Waggoner&ndash;Zha conditional-forecasting algorithm. The extension is about
+            <em>uncertainty</em>: scenarios are reported as fan charts rather than single
+            lines, with confidence bands that separate the shock uncertainty available in
+            closed form from the parameter uncertainty drawn from the posterior. The toolbox
+            also handles softly-held conditions, joint multi-variable scenarios &mdash; such
+            as a stagflation path that fixes prices and unemployment simultaneously &mdash;
+            and historical counterfactuals that re-run the sample with a single structural
+            shock overridden. An interactive browser dashboard lets you build scenarios and
+            counterfactuals live and watch the bands update, and a companion methods note
+            works through every derivation, including the implications of the Cholesky timing
+            restrictions used for identification. Canadian data come from Statistics Canada
+            and FRED; the code needs no MATLAB toolbox and runs under Octave.
           </p>
         </details>
+
         <p class="filelinks">
-          <a href="https://github.com/ELatulippe">Code</a>
-          <a href="files/risk_scenarios_notes.pdf">Notes</a>
+          <a href="https://github.com/ELatulippe/ELatulippe.github.io/tree/main/ConditionalForecast">Code</a>
+          <a href="ConditionalForecast/dashboard/dashboard_template.html">Dashboard</a>
+          <a href="ConditionalForecast/paper/paper.pdf">Notes</a>
         </p>
       </div>
 
