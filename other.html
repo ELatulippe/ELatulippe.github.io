@@ -20,10 +20,12 @@
   }
   .gallery img {
     width: 100%;
-    height: auto;
+    height: 230px;              /* equal vertical length for both figures */
+    object-fit: contain;        /* scale to fit the box without cropping */
     display: block;
     border: 1px solid var(--rule, #d8d8d8);
     background: #fff;
+    cursor: zoom-in;            /* hint that the figure enlarges on click */
   }
   .gallery figcaption {
     font-family: var(--sans, sans-serif);
@@ -34,6 +36,19 @@
   }
   @media (max-width: 720px) {
     .gallery { grid-template-columns: 1fr; gap: 14px; }
+    .gallery img { height: 200px; }
+  }
+  /* click-to-enlarge overlay */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 1000;
+    display: none; align-items: center; justify-content: center;
+    background: rgba(0, 0, 0, 0.85); padding: 24px; cursor: zoom-out;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 96%; max-height: 96%;
+    background: #fff; border: 3px solid #fff;
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.5);
   }
 </style>
 </head>
@@ -130,5 +145,27 @@
 
   </div>
 </div>
+
+<!-- click-to-enlarge lightbox -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <img id="lightbox-img" src="" alt="Enlarged figure">
+</div>
+<script>
+  (function () {
+    var lb  = document.getElementById('lightbox');
+    var lbi = document.getElementById('lightbox-img');
+    document.querySelectorAll('.gallery img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        lbi.src = img.currentSrc || img.src;
+        lbi.alt = img.alt || 'Enlarged figure';
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+      });
+    });
+    function close() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); lbi.src = ''; }
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  })();
+</script>
 </body>
 </html>
