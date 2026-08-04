@@ -4,11 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Other — Étienne Latulippe</title>
-<!-- Two stylesheet lines below: keep whichever matches where style.css actually sits, delete the other. -->
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="style.css">
 <style>
-  /* scoped styles for the project image strip — no changes to style.css needed */
   .gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -20,12 +18,12 @@
   }
   .gallery img {
     width: 100%;
-    height: 230px;              /* equal vertical length for both figures */
-    object-fit: contain;        /* scale to fit the box without cropping */
+    height: 230px;
+    object-fit: contain;
     display: block;
     border: 1px solid var(--rule, #d8d8d8);
     background: #fff;
-    cursor: zoom-in;            /* hint that the figure enlarges on click */
+    cursor: zoom-in;
   }
   .gallery figcaption {
     font-family: var(--sans, sans-serif);
@@ -38,7 +36,6 @@
     .gallery { grid-template-columns: 1fr; gap: 14px; }
     .gallery img { height: 200px; }
   }
-  /* click-to-enlarge overlay */
   .lightbox {
     position: fixed; inset: 0; z-index: 1000;
     display: none; align-items: center; justify-content: center;
@@ -113,15 +110,15 @@
           <p>
             A self-contained MATLAB package that replicates and then extends the
             risk-scenario exercise of Moran, Stevanovic and Surprenant (2025), Bank of
-            Canada Staff Working Paper 2025&ndash;28, <em>Risk Scenarios and Macroeconomic
+            Canada Staff Working Paper 2025–28, <em>Risk Scenarios and Macroeconomic
             Forecasts</em>. A monthly Bayesian VAR for Canada is estimated under a Minnesota
             prior, and alternative paths for selected variables are imposed with the
-            Waggoner&ndash;Zha conditional-forecasting algorithm. The extension is about
+            Waggoner–Zha conditional-forecasting algorithm. The extension is about
             <em>uncertainty</em>: scenarios are reported as fan charts rather than single
             lines, with confidence bands that separate the shock uncertainty available in
             closed form from the parameter uncertainty drawn from the posterior. The toolbox
-            also handles softly-held conditions, joint multi-variable scenarios &mdash; such
-            as a stagflation path that fixes prices and unemployment simultaneously &mdash;
+            also handles softly-held conditions, joint multi-variable scenarios — such
+            as a stagflation path that fixes prices and unemployment simultaneously —
             and historical counterfactuals that re-run the sample with a single structural
             shock overridden. An interactive browser dashboard lets you build scenarios and
             counterfactuals live and watch the bands update, and a companion methods note
@@ -138,6 +135,68 @@
         </p>
       </div>
 
+      <h2>A Structural Model of the Global Oil Market</h2>
+
+      <div class="paper">
+        <span class="title">A structural VAR of the global oil market: a replication on public data</span>
+        <span class="outlet">MATLAB replication &amp; methods note, 2026</span>
+
+        <div class="gallery">
+          <figure>
+            <img src="oilsvar/scenarios.png"
+                 alt="Supply and demand scenarios for the real oil price">
+            <figcaption>
+              Two policy scenarios for the real oil price &mdash; an OPEC+ supply cut of
+              1&nbsp;Mb/d and a downward global-growth revision &mdash; each with 68% bootstrap
+              bands, reported in per&nbsp;cent and US dollars.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="oilsvar/historical_decomposition.png"
+                 alt="Historical decomposition of the real oil price">
+            <figcaption>
+              Historical decomposition of the real oil price since 2021 into the four
+              structural shocks (supply, oil-market demand, storage demand, economic growth);
+              the black line is the total deviation from baseline.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="oilsvar/figure3_scenarios.png"
+                 alt="Conditional forecasts under anticipated activity paths">
+            <figcaption>
+              Conditional forecasts under higher- and lower-activity paths: the implied paths
+              for production, consumption, net stock build, the real price and activity.
+            </figcaption>
+          </figure>
+        </div>
+
+        <details class="abstract">
+          <summary>Description</summary>
+          <p>
+            A self-contained MATLAB replication of Reinhard Ellwanger (2019), Bank of Canada
+            Staff Analytical Note 2019&ndash;17, <em>A Structural Model of the Global Oil
+            Market</em>. A four-variable structural VAR &mdash; oil production, consumption,
+            the real price of oil and global activity &mdash; is identified through the note's
+            elasticity impact matrix, with the short-run price elasticity of oil supply fixed
+            as the single identifying restriction, recovering four structural shocks (supply,
+            oil-market-specific demand, storage demand and economic growth). The exercise runs
+            on public proxies &mdash; Brent deflated by US CPI, EIA STEO world production and
+            consumption, and Kilian's index of global real economic activity &mdash; so it
+            reproduces the model's structure and qualitative story rather than the note's exact
+            numbers. It reports impulse responses, a forecast-error variance decomposition, a
+            historical decomposition of the real price, and one supply-side and one
+            demand/growth-side scenario, all with moving-block bootstrap bands. A companion
+            methods note works through the identification of the impact matrix and the results.
+            Data loaders are local-first and the code runs in base MATLAB.
+          </p>
+        </details>
+
+        <p class="filelinks">
+          <a href="https://github.com/ELatulippe/OilSVAR">Code</a>
+          <a href="oilsvar/Oil_SVAR.pdf">Notes</a>
+        </p>
+      </div>
+
       <div class="footer">
         Last updated July 2026.
       </div>
@@ -146,7 +205,6 @@
   </div>
 </div>
 
-<!-- click-to-enlarge lightbox -->
 <div id="lightbox" class="lightbox" aria-hidden="true">
   <img id="lightbox-img" src="" alt="Enlarged figure">
 </div>
