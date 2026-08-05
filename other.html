@@ -13,6 +13,9 @@
     gap: 18px;
     margin: 14px 0 4px;
   }
+  .gallery.cols3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   .gallery figure {
     margin: 0;
   }
@@ -34,6 +37,7 @@
   }
   @media (max-width: 720px) {
     .gallery { grid-template-columns: 1fr; gap: 14px; }
+    .gallery.cols3 { grid-template-columns: 1fr; }
     .gallery img { height: 200px; }
   }
   .lightbox {
@@ -80,10 +84,9 @@
         agenda.
       </p>
 
-      <h2>Conditional Forecasts and Risk Scenarios</h2>
+      <h2>Conditional forecasting with uncertainty in a monetary VAR</h2>
 
       <div class="paper">
-        <span class="title">Conditional forecasting with uncertainty in a monetary VAR</span>
         <span class="outlet">MATLAB toolbox &amp; interactive dashboard, 2026</span>
 
         <div class="gallery">
@@ -135,13 +138,12 @@
         </p>
       </div>
 
-      <h2>A Structural Model of the Global Oil Market</h2>
+      <h2>A structural VAR of the global oil market: a replication on public data</h2>
 
       <div class="paper">
-        <span class="title">A structural VAR of the global oil market: a replication on public data</span>
         <span class="outlet">MATLAB replication &amp; methods note, 2026</span>
 
-        <div class="gallery">
+        <div class="gallery cols3">
           <figure>
             <img src="oilsvar/scenarios.png"
                  alt="Supply and demand scenarios for the real oil price">
