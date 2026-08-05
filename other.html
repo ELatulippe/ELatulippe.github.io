@@ -84,7 +84,7 @@
         agenda.
       </p>
 
-      <h2>Conditional forecasting with uncertainty in a monetary VAR</h2>
+      <h2>Conditional Forecasting with Uncertainty in a Monetary VAR</h2>
 
       <div class="paper">
         <span class="outlet">MATLAB toolbox &amp; interactive dashboard, 2026</span>
@@ -92,10 +92,10 @@
         <div class="gallery">
           <figure>
             <img src="paper/figure5_bands_oil_spike_loosely_held.png"
-                 alt="Softly-held oil-price scenario fan chart">
+                 alt="Stagflation scenario: oil and unemployment up together">
             <figcaption>
-              A softly-held oil-price scenario: the condition is imposed loosely rather than
-              exactly, so the fan widens around the path instead of pinning it shut.
+              A stagflation scenario: oil prices and unemployment pushed up together, forcing
+              the system onto a supply-shock path.
             </figcaption>
           </figure>
           <figure>
@@ -138,32 +138,31 @@
         </p>
       </div>
 
-      <h2>A structural VAR of the global oil market: a replication on public data</h2>
+      <h2>A Structural VAR of the Global Oil Market: A Replication on Public Data</h2>
 
       <div class="paper">
         <span class="outlet">MATLAB replication &amp; methods note, 2026</span>
 
         <div class="gallery cols3">
           <figure>
-            <img src="oilsvar/scenarios.png"
-                 alt="Supply and demand scenarios for the real oil price">
+            <img src="paper/irf.png"
+                 alt="Impulse responses to the four structural shocks">
             <figcaption>
-              Two policy scenarios for the real oil price &mdash; an OPEC+ supply cut of
-              1&nbsp;Mb/d and a downward global-growth revision &mdash; each with 68% bootstrap
-              bands, reported in per&nbsp;cent and US dollars.
+              Impulse responses of production, consumption, the real price and activity to
+              one-standard-deviation supply, oil-market demand, storage-demand and growth
+              shocks, with 68% bootstrap bands.
             </figcaption>
           </figure>
           <figure>
-            <img src="oilsvar/historical_decomposition.png"
-                 alt="Historical decomposition of the real oil price">
+            <img src="paper/fevd.png"
+                 alt="Forecast-error variance decomposition">
             <figcaption>
-              Historical decomposition of the real oil price since 2021 into the four
-              structural shocks (supply, oil-market demand, storage demand, economic growth);
-              the black line is the total deviation from baseline.
+              Forecast-error variance decomposition: the share of each variable's forecast-error
+              variance attributable to each of the four shocks, by horizon.
             </figcaption>
           </figure>
           <figure>
-            <img src="oilsvar/figure3_scenarios.png"
+            <img src="paper/figure3_scenarios.png"
                  alt="Conditional forecasts under anticipated activity paths">
             <figcaption>
               Conditional forecasts under higher- and lower-activity paths: the implied paths
@@ -195,7 +194,7 @@
 
         <p class="filelinks">
           <a href="https://github.com/ELatulippe/OilSVAR">Code</a>
-          <a href="oilsvar/Oil_SVAR.pdf">Notes</a>
+          <a href="paper/Oil_SVAR.pdf">Notes</a>
         </p>
       </div>
 
