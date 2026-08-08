@@ -262,48 +262,46 @@
 
         <div class="gallery cols3">
           <figure>
-            <img src="paper/dsge_forecast.png"
-                 alt="Unconditional model forecast of output growth, core inflation, the funds rate and r-star">
+            <img src="paper/dsge_project/fig4a_core_pce_yoy.png"
+                 alt="Historical decomposition of year-over-year core PCE inflation">
             <figcaption>
-              Unconditional model forecast as of 2026Q1 &mdash; output growth, core PCE
-              inflation, the federal funds rate and the one-year-forward natural rate
-              <em>r</em>*, each with 68% bands around the posterior mean.
+              Historical decomposition of year-over-year core PCE inflation, 2019Q4 to 2026Q1,
+              into supply, demand, fiscal, monetary and oil shocks; the black line is the
+              deviation from steady state in the data.
             </figcaption>
           </figure>
           <figure>
-            <img src="paper/dsge_rstar.png"
+            <img src="paper/dsge_project/fig5a_output_gap.png"
+                 alt="Historical decomposition of the output gap">
+            <figcaption>
+              Historical decomposition of the output gap over the same window into the same
+              shock groups; the black line is the data, centered on the long-run level.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="paper/dsge_project/fig6_rstar.png"
                  alt="Model-implied natural rate of interest against external measures">
             <figcaption>
               Model-implied natural rate of interest <em>r</em>* (one- and five-year forward)
-              against the Holston&ndash;Laubach&ndash;Williams and Lubik&ndash;Matthes
-              estimates, 1985&ndash;2026.
+              against the Holston-Laubach-Williams and Lubik-Matthes estimates, 1985 to 2026.
             </figcaption>
           </figure>
           <figure>
-            <img src="paper/dsge_historical_decomposition.png"
-                 alt="Historical decomposition of year-over-year core PCE inflation">
+            <img src="paper/dsge_project/fig7_uncond_forecast.png"
+                 alt="Unconditional model forecast of output growth, core inflation, the funds rate and r-star">
             <figcaption>
-              Historical decomposition of year-over-year core PCE inflation,
-              2019Q4&ndash;2026Q1, into supply, demand, fiscal, monetary and oil shocks; the
-              black line is the deviation from steady state in the data.
+              Unconditional model forecast as of 2026Q1 (dashed line = jump-off): output growth,
+              core PCE inflation, the federal funds rate and the one-year-forward natural rate
+              <em>r</em>*, each with 68% bands.
             </figcaption>
           </figure>
           <figure>
-            <img src="paper/dsge_irf.png"
-                 alt="Impulse responses to the structural shocks">
-            <figcaption>
-              Impulse responses of output growth, core and headline inflation and the federal
-              funds rate to six of the twelve one-standard-deviation structural shocks (levels,
-              pp; dotted line = steady state).
-            </figcaption>
-          </figure>
-          <figure>
-            <img src="paper/dsge_scenarios.png"
+            <img src="paper/dsge_project/fig8_cond_scenarios.png"
                  alt="Conditional forecast scenarios">
             <figcaption>
-              Conditional forecast scenarios &mdash; a constant-policy-rate path and an
-              inflation-at-target path &mdash; against the unconditional baseline for the same
-              four variables.
+              Conditional forecast scenarios, a constant-policy-rate path and an
+              inflation-at-target path, against the unconditional baseline for the same four
+              variables.
             </figcaption>
           </figure>
         </div>
@@ -337,30 +335,28 @@
         <details class="abstract">
           <summary>Description</summary>
           <p>
-            An independent replication of Mart&iacute;n Faria-e-Castro (2026), <em>The St.&nbsp;Louis
+            A replication of Mart&iacute;n Faria-e-Castro (2026), <em>The St.&nbsp;Louis
             Fed DSGE Model</em>, Federal Reserve Bank of St.&nbsp;Louis, rebuilt from scratch in
-            Dynare and estimated on US data 1959Q1&ndash;2026Q1. The model is a medium-scale New
+            Dynare and estimated on US data 1959Q1 to 2026Q1. The model is a medium-scale New
             Keynesian economy with two-agent (worker/capitalist) household heterogeneity, an
             explicit fiscal block with distortionary taxes, transfers and government debt, oil as
             both a production input and a consumption good, a convenience yield on government debt,
             and two stochastic trends. The 63 free parameters are estimated by random-walk
-            Metropolis&ndash;Hastings (12 chains); 57 of the 63 posterior means fall inside the
+            Metropolis-Hastings (12 chains); 57 of the 63 posterior means fall inside the
             paper's 90% credible intervals. The replication reproduces the paper's historical shock
             decompositions, forecast-error variance decompositions, impulse responses, a
             model-consistent natural rate <em>r</em>* against external measures, and the
             unconditional and conditional forecasts, including its Table&nbsp;5. It adds a
-            flexible-price, flexible-wage block &mdash; not shipped with the paper &mdash; that
-            generates <em>r</em>* and the output gap, and a companion note that re-derives every
-            equilibrium condition from microfoundations. The remaining forecast-table differences
-            are each traced to one identified choice &mdash; per-capita versus aggregate output
-            growth, and data-anchored trend-growth and inflation-target estimates &mdash; rather
-            than to any error.
+            flexible-price, flexible-wage block that generates <em>r</em>* and the output gap, and a
+            companion note that re-derives every equilibrium condition from microfoundations. The
+            remaining forecast-table differences can be attributed to data-anchored trend-growth and
+            inflation-target estimates.
           </p>
         </details>
 
         <p class="filelinks">
           <a href="https://github.com/ELatulippe/DSGE_US">Code</a>
-          <a href="paper/United_States_DSGE_Model.pdf">Notes</a>
+          <a href="paper/dsge_project/United_States_DSGE_Model.pdf">Notes</a>
         </p>
       </div>
 
