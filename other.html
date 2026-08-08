@@ -29,6 +29,16 @@
     background: #fff;
     cursor: zoom-in;
   }
+  /* DSGE gallery: two columns with taller boxes so the wide (~2:1) charts
+     render large enough to read without opening them. */
+  .gallery.dsge img {
+    height: 300px;
+  }
+  .gallery.dsge > figure:last-child:nth-child(odd) {
+    grid-column: 1 / -1;          /* occupy the final row on its own... */
+    width: calc(50% - 9px);       /* ...but keep the box one column wide (matches the other 4) */
+    justify-self: center;         /* centered on the row */
+  }
   .gallery figcaption {
     font-family: var(--sans, sans-serif);
     font-size: 0.8rem;
@@ -40,6 +50,8 @@
     .gallery { grid-template-columns: 1fr; gap: 14px; }
     .gallery.cols3 { grid-template-columns: 1fr; }
     .gallery img { height: 200px; }
+    .gallery.dsge img { height: auto; }
+    .gallery.dsge > figure:last-child:nth-child(odd) { grid-column: auto; width: auto; }
   }
   .lightbox {
     position: fixed; inset: 0; z-index: 1000;
@@ -260,7 +272,7 @@
       <div class="paper">
         <span class="outlet">Dynare/MATLAB replication &amp; methods note, 2026</span>
 
-        <div class="gallery cols3">
+        <div class="gallery dsge">
           <figure>
             <img src="paper/dsge_project/dsge_historical_decomposition_core_pce.png"
                  alt="Historical decomposition of year-over-year core PCE inflation">
