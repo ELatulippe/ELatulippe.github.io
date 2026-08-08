@@ -34,11 +34,6 @@
   .gallery.dsge img {
     height: 300px;
   }
-  .gallery.dsge > figure:last-child:nth-child(odd) {
-    grid-column: 1 / -1;          /* occupy the final row on its own... */
-    width: calc(50% - 9px);       /* ...but keep the box one column wide (matches the other 4) */
-    justify-self: center;         /* centered on the row */
-  }
   .gallery figcaption {
     font-family: var(--sans, sans-serif);
     font-size: 0.8rem;
@@ -51,7 +46,6 @@
     .gallery.cols3 { grid-template-columns: 1fr; }
     .gallery img { height: 200px; }
     .gallery.dsge img { height: auto; }
-    .gallery.dsge > figure:last-child:nth-child(odd) { grid-column: auto; width: auto; }
   }
   .lightbox {
     position: fixed; inset: 0; z-index: 1000;
@@ -305,15 +299,6 @@
               Unconditional model forecast as of 2026Q1 (dashed line = jump-off): output growth,
               core PCE inflation, the federal funds rate and the one-year-forward natural rate
               <em>r</em>*, each with 68% and 90% predictive bands.
-            </figcaption>
-          </figure>
-          <figure>
-            <img src="paper/dsge_project/dsge_scenarios.png"
-                 alt="Conditional forecast scenarios">
-            <figcaption>
-              Conditional forecast scenarios, a constant-policy-rate path and an
-              inflation-at-target path, against the unconditional baseline for the same four
-              variables.
             </figcaption>
           </figure>
         </div>
