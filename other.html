@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Other — Étienne Latulippe</title>
+<title>Other Projects — Étienne Latulippe</title>
 <meta name="description" content="Code, replications, and side projects by Étienne Latulippe — Bayesian VARs, conditional forecasting, and structural oil-market models in MATLAB.">
 <link rel="canonical" href="https://elatulippe.github.io/other.html">
 <link rel="stylesheet" href="assets/style.css">
@@ -52,6 +52,46 @@
     background: #fff; border: 3px solid #fff;
     box-shadow: 0 6px 40px rgba(0, 0, 0, 0.5);
   }
+  .projtable {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 14px 0 4px;
+    font-family: var(--sans, sans-serif);
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+  .projtable caption {
+    caption-side: top;
+    text-align: left;
+    color: var(--muted, #5c5c5c);
+    font-size: 0.8rem;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .projtable th, .projtable td {
+    padding: 4px 10px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .projtable thead th {
+    border-top: 2px solid var(--ink, #222);
+    border-bottom: 1px solid var(--ink, #222);
+    font-weight: 600;
+  }
+  .projtable tbody tr:last-child td {
+    border-bottom: 2px solid var(--ink, #222);
+  }
+  .projtable th:first-child, .projtable td:first-child {
+    text-align: left;
+  }
+  .projtable tbody tr.longrun td {
+    border-top: 1px solid var(--rule, #bbb);
+    font-style: italic;
+  }
+  @media (max-width: 720px) {
+    .projtable { font-size: 0.76rem; }
+    .projtable th, .projtable td { padding: 4px 6px; }
+  }
 </style>
 </head>
 <body>
@@ -62,7 +102,7 @@
     <nav class="nav">
       <a href="index.html">Research</a>
       <a href="teaching.html">Teaching</a>
-      <a href="other.html" class="active">Other</a>
+      <a href="other.html" class="active">Other Projects</a>
     </nav>
   </header>
 
@@ -215,8 +255,117 @@
         </p>
       </div>
 
+      <h2>The St. Louis Fed DSGE Model: A Replication</h2>
+
+      <div class="paper">
+        <span class="outlet">Dynare/MATLAB replication &amp; methods note, 2026</span>
+
+        <div class="gallery cols3">
+          <figure>
+            <img src="paper/dsge_forecast.png"
+                 alt="Unconditional model forecast of output growth, core inflation, the funds rate and r-star">
+            <figcaption>
+              Unconditional model forecast as of 2026Q1 &mdash; output growth, core PCE
+              inflation, the federal funds rate and the one-year-forward natural rate
+              <em>r</em>*, each with 68% bands around the posterior mean.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="paper/dsge_rstar.png"
+                 alt="Model-implied natural rate of interest against external measures">
+            <figcaption>
+              Model-implied natural rate of interest <em>r</em>* (one- and five-year forward)
+              against the Holston&ndash;Laubach&ndash;Williams and Lubik&ndash;Matthes
+              estimates, 1985&ndash;2026.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="paper/dsge_historical_decomposition.png"
+                 alt="Historical decomposition of year-over-year core PCE inflation">
+            <figcaption>
+              Historical decomposition of year-over-year core PCE inflation,
+              2019Q4&ndash;2026Q1, into supply, demand, fiscal, monetary and oil shocks; the
+              black line is the deviation from steady state in the data.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="paper/dsge_irf.png"
+                 alt="Impulse responses to the structural shocks">
+            <figcaption>
+              Impulse responses of output growth, core and headline inflation and the federal
+              funds rate to six of the twelve one-standard-deviation structural shocks (levels,
+              pp; dotted line = steady state).
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="paper/dsge_scenarios.png"
+                 alt="Conditional forecast scenarios">
+            <figcaption>
+              Conditional forecast scenarios &mdash; a constant-policy-rate path and an
+              inflation-at-target path &mdash; against the unconditional baseline for the same
+              four variables.
+            </figcaption>
+          </figure>
+        </div>
+
+        <table class="projtable">
+          <caption>
+            <strong>Model projection, vintage 2026Q1.</strong> Output growth and core PCE
+            inflation are Q4/Q4; the federal funds rate, <em>r</em>* and the output gap are Q4
+            levels; &ldquo;longer run&rdquo; is the 2031&ndash;35 average. Output growth is
+            aggregate (per-capita plus a Census population add-on). Values in per&nbsp;cent.
+          </caption>
+          <thead>
+            <tr>
+              <th>Year (Q4)</th>
+              <th>Output growth</th>
+              <th>Core PCE inflation</th>
+              <th>Fed funds rate</th>
+              <th>Natural rate <em>r</em>*</th>
+              <th>Output gap</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2026</td><td>1.1</td><td>3.1</td><td>3.7</td><td>1.1</td><td>&minus;0.3</td></tr>
+            <tr><td>2027</td><td>2.1</td><td>1.8</td><td>3.0</td><td>0.7</td><td>&minus;0.2</td></tr>
+            <tr><td>2028</td><td>2.2</td><td>1.8</td><td>2.7</td><td>0.6</td><td>0.1</td></tr>
+            <tr><td>2029</td><td>2.0</td><td>2.0</td><td>2.7</td><td>0.6</td><td>0.2</td></tr>
+            <tr class="longrun"><td>Longer run</td><td>1.9</td><td>2.0</td><td>2.7</td><td>0.4</td><td>0.0</td></tr>
+          </tbody>
+        </table>
+
+        <details class="abstract">
+          <summary>Description</summary>
+          <p>
+            An independent replication of Mart&iacute;n Faria-e-Castro (2026), <em>The St.&nbsp;Louis
+            Fed DSGE Model</em>, Federal Reserve Bank of St.&nbsp;Louis, rebuilt from scratch in
+            Dynare and estimated on US data 1959Q1&ndash;2026Q1. The model is a medium-scale New
+            Keynesian economy with two-agent (worker/capitalist) household heterogeneity, an
+            explicit fiscal block with distortionary taxes, transfers and government debt, oil as
+            both a production input and a consumption good, a convenience yield on government debt,
+            and two stochastic trends. The 63 free parameters are estimated by random-walk
+            Metropolis&ndash;Hastings (12 chains); 57 of the 63 posterior means fall inside the
+            paper's 90% credible intervals. The replication reproduces the paper's historical shock
+            decompositions, forecast-error variance decompositions, impulse responses, a
+            model-consistent natural rate <em>r</em>* against external measures, and the
+            unconditional and conditional forecasts, including its Table&nbsp;5. It adds a
+            flexible-price, flexible-wage block &mdash; not shipped with the paper &mdash; that
+            generates <em>r</em>* and the output gap, and a companion note that re-derives every
+            equilibrium condition from microfoundations. The remaining forecast-table differences
+            are each traced to one identified choice &mdash; per-capita versus aggregate output
+            growth, and data-anchored trend-growth and inflation-target estimates &mdash; rather
+            than to any error.
+          </p>
+        </details>
+
+        <p class="filelinks">
+          <a href="https://github.com/ELatulippe/DSGE_US">Code</a>
+          <a href="paper/United_States_DSGE_Model.pdf">Notes</a>
+        </p>
+      </div>
+
       <div class="footer">
-        Last updated July 2026.
+        Last updated August 2026.
       </div>
     </main>
 
