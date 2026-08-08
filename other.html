@@ -29,14 +29,6 @@
     background: #fff;
     cursor: zoom-in;
   }
-  /* DSGE galleries: let the wide charts size to their natural height so they
-     fill the box instead of being letterboxed inside a fixed 230px frame. */
-  .gallery.dsge {
-    align-items: start;
-  }
-  .gallery.dsge img {
-    height: auto;
-  }
   .gallery figcaption {
     font-family: var(--sans, sans-serif);
     font-size: 0.8rem;
@@ -268,7 +260,7 @@
       <div class="paper">
         <span class="outlet">Dynare/MATLAB replication &amp; methods note, 2026</span>
 
-        <div class="gallery cols3 dsge">
+        <div class="gallery cols3">
           <figure>
             <img src="paper/dsge_project/dsge_historical_decomposition_core_pce.png"
                  alt="Historical decomposition of year-over-year core PCE inflation">
@@ -294,9 +286,6 @@
               against the Holston-Laubach-Williams and Lubik-Matthes estimates, 1985 to 2026.
             </figcaption>
           </figure>
-        </div>
-
-        <div class="gallery dsge">
           <figure>
             <img src="paper/dsge_project/dsge_forecast.png"
                  alt="Unconditional model forecast of output growth, core inflation, the funds rate and r-star">
