@@ -98,6 +98,18 @@
     .projtable { font-size: 0.76rem; }
     .projtable th, .projtable td { padding: 4px 6px; }
   }
+  /* "Overview" toggle shown inline with the Code / Notes links */
+  .paper .filelinks .abs-toggle {
+    font: inherit; color: var(--link); background: none; border: 0;
+    padding: 0; margin-right: 14px; cursor: pointer;
+  }
+  .paper .filelinks .abs-toggle::before { content: "\25B8  "; font-size: 0.8em; }
+  .paper .filelinks .abs-toggle[aria-expanded="true"]::before { content: "\25BE  "; }
+  .paper .filelinks .abs-toggle:hover { text-decoration: underline; }
+  .paper .abstract-text {
+    margin: 8px 0 0; font-size: 0.95rem; color: #2c2c2c;
+    border-left: 2px solid var(--rule); padding-left: 14px;
+  }
 </style>
 </head>
 <body>
@@ -153,9 +165,13 @@
           </figure>
         </div>
 
-        <details class="abstract">
-          <summary>Description</summary>
-          <p>
+        <p class="filelinks">
+          <button type="button" class="abs-toggle" aria-expanded="false" aria-controls="desc-forecast" onclick="toggleAbstract(this)">Overview</button>
+          <a href="https://github.com/ELatulippe/ConditionalForecast">Code</a>
+          <a href="dashboard/dashboard.html">Dashboard</a>
+          <a href="paper/scenario_project/paper.pdf">Notes</a>
+        </p>
+        <p class="abstract-text" id="desc-forecast" hidden>
             A self-contained MATLAB package that replicates and then extends the
             risk-scenario exercise of Moran, Stevanovic and Surprenant (2025), Bank of
             Canada Staff Working Paper 2025–28, <em>Risk Scenarios and Macroeconomic
@@ -174,13 +190,6 @@
             restrictions used for identification. Canadian data come from Statistics Canada
             and FRED; the code needs no MATLAB toolbox and runs under Octave.
           </p>
-        </details>
-
-        <p class="filelinks">
-          <a href="https://github.com/ELatulippe/ConditionalForecast">Code</a>
-          <a href="dashboard/dashboard.html">Dashboard</a>
-          <a href="paper/scenario_project/paper.pdf">Notes</a>
-        </p>
       </div>
 
       <h2>A Structural VAR of the Global Oil Market: A Replication</h2>
@@ -234,9 +243,12 @@
           </figure>
         </div>
 
-        <details class="abstract">
-          <summary>Description</summary>
-          <p>
+        <p class="filelinks">
+          <button type="button" class="abs-toggle" aria-expanded="false" aria-controls="desc-oil" onclick="toggleAbstract(this)">Overview</button>
+          <a href="https://github.com/ELatulippe/OilSVAR">Code</a>
+          <a href="paper/oil_project/Oil_SVAR.pdf">Notes</a>
+        </p>
+        <p class="abstract-text" id="desc-oil" hidden>
             A self-contained MATLAB replication of Reinhard Ellwanger (2019), Bank of Canada
             Staff Analytical Note 2019&ndash;17, <em>A Structural Model of the Global Oil
             Market</em>. A four-variable structural VAR &mdash; oil production, consumption,
@@ -253,12 +265,6 @@
             methods note works through the identification of the impact matrix and the results.
             Data loaders are local-first and the code runs in base MATLAB.
           </p>
-        </details>
-
-        <p class="filelinks">
-          <a href="https://github.com/ELatulippe/OilSVAR">Code</a>
-          <a href="paper/oil_project/Oil_SVAR.pdf">Notes</a>
-        </p>
       </div>
 
       <h2>The St. Louis Fed DSGE Model: A Replication</h2>
@@ -329,9 +335,12 @@
           </tbody>
         </table>
 
-        <details class="abstract">
-          <summary>Description</summary>
-          <p>
+        <p class="filelinks">
+          <button type="button" class="abs-toggle" aria-expanded="false" aria-controls="desc-dsge" onclick="toggleAbstract(this)">Overview</button>
+          <a href="https://github.com/ELatulippe/DSGE_US">Code</a>
+          <a href="paper/dsge_project/United_States_DSGE_Model.pdf">Notes</a>
+        </p>
+        <p class="abstract-text" id="desc-dsge" hidden>
             A replication of Miguel Faria-e-Castro (2026), <em>The St.&nbsp;Louis
             Fed DSGE Model</em>, Federal Reserve Bank of St.&nbsp;Louis, rebuilt from scratch in
             Dynare and estimated on US data 1959Q1 to 2026Q1. The model is a medium-scale New
@@ -350,12 +359,6 @@
             remaining forecast-table differences can be attributed to data-anchored trend-growth and
             inflation-target estimates.
           </p>
-        </details>
-
-        <p class="filelinks">
-          <a href="https://github.com/ELatulippe/DSGE_US">Code</a>
-          <a href="paper/dsge_project/United_States_DSGE_Model.pdf">Notes</a>
-        </p>
       </div>
 
       <div class="footer">
@@ -385,6 +388,14 @@
     lb.addEventListener('click', close);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   })();
+</script>
+<script>
+  function toggleAbstract(btn) {
+    var box = document.getElementById(btn.getAttribute('aria-controls'));
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    box.hidden = open;
+  }
 </script>
 </body>
 </html>
