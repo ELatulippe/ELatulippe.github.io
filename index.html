@@ -84,16 +84,15 @@
       <p class="intro">
         Welcome to my website! I am a Ph.D. candidate in economics at the
         University of British Columbia. I am a macroeconomist working on the
-        identification of monetary policy shocks, with a focus on proxy-SVARs,
-        high-frequency instruments, and weak-instrument-robust inference. I am
-        on the job market in 2026&ndash;2027.
+        identification of macroeconomic shocks, with a focus on high-frequency
+        instruments and on how to combine several imperfect instruments in
+        structural VARs. I am on the job market in 2026&ndash;2027.
       </p>
 
       <h2>Job Market Paper</h2>
 
       <div class="paper">
         <span class="title">High-Frequency Monetary Policy Surprises: A Cautionary Tale</span>
-        <span class="outlet">Draft available upon request</span>
         <p class="presentations">
           <span class="plabel">Presentations:</span>
           Canadian Economics Association (2026); Student T2M Conference, HEC Montréal (2026); Banco de México (2026)
@@ -103,12 +102,33 @@
           <a href="files/jmp_appendix.pdf">Online Appendix</a>
           <a href="files/jmp_slides.pdf">Slides</a>
         </p>
-        <!-- Abstract: delete this line and the closing marker below to show it.
         <details class="abstract">
           <summary>Abstract</summary>
-          <p>Paste the abstract here.</p>
+          <p>Impulse responses to monetary policy shocks identified from high-frequency
+            interest-rate surprises are large: larger than any conventional identification
+            scheme delivers on the same reduced form, and largest of all when the surprise is
+            first orthogonalised on pre-announcement information. Bauer and Swanson (2023)
+            read that enlargement as the removal of an attenuation bias. I argue that it is
+            better read as an artefact of the correction itself: a proxy identifies the response
+            to the mixture of shocks it tracks, and the correction changes that mixture. It is
+            nonetheless necessary, since the surprise is predictable from pre-announcement data,
+            but removing the predictable variation at meeting frequency takes proportionally more
+            of the first stage than of the contamination. The resulting bias can therefore become
+            larger after the correction than before it, on impact and at every subsequent horizon.
+            The constructive response is to widen the instrument window. The shock is what the
+            decision does not owe to economic conditions, and the announcement window reveals only
+            the slice the market had not already priced; instruments built from the decision better
+            preserve their first stage under the same purge. An extended Romer and Romer (2004)
+            narrative shock and a Cholesky-based instrument carry contamination of their own, but
+            retain a stronger first stage. The task is then to pool instruments while accounting
+            for the contamination they have in common. Where no single proxy is both strong and
+            clean, a hybrid estimator replaces a clean anchor with a restriction on the
+            <em>structure</em> of the contamination: pooling <em>within</em> blocks that share a
+            contamination direction buys strength, annihilating <em>across</em> blocks buys
+            validity, and what identifies the direction is the dispersion of relevance within a
+            block. On a panel of U.S. monetary proxies, this helps lift the first stage while
+            preserving block exogeneity and returns a standard monetary contraction.</p>
         </details>
-        -->
       </div>
 
       <hr>
@@ -121,12 +141,26 @@
           <a href="files/Orthogonalization_Necessary_but_not_Sufficient_Paper.pdf">Paper</a>
           <a href="files/purging_slides.pdf">Slides</a>
         </p>
-        <!-- Abstract: delete this line and the closing marker below to show it.
         <details class="abstract">
           <summary>Abstract</summary>
-          <p>Paste the abstract here.</p>
+          <p>High-frequency monetary policy surprises are predictable from pre-announcement
+            information, and orthogonalizing them on that information has become standard
+            practice. I show that this purge is necessary but not sufficient, through three
+            results. First, what the purge delivers is conditional on the control set. The raw
+            surprise implies that output <em>rises</em> after a tightening; orthogonalization
+            corrects the sign, but the magnitude remains set-identified: the peak output response
+            varies by a factor of two across equally defensible sets of pre-announcement
+            controls. Second, predictability is not spread evenly across announcements. I
+            document a high-frequency footprint of the Fed put: the predictable component is an
+            easing response to financial deterioration, so it concentrates in easing surprises,
+            while tightenings, which typically follow ordinary good-news data, are already close
+            to clean. A symmetric projection fitted largely on the easings therefore over-cleans
+            the near-clean tightenings. Third, even the recommended purging order is not
+            innocuous at meeting frequency: the pre-announcement controls are measured over
+            multi-week windows that can overlap the previous announcement, so they have already
+            moved in response to the previous policy shock, and purging can remove genuine
+            monetary variation, weakening the first stage.</p>
         </details>
-        -->
       </div>
 
       <hr>
