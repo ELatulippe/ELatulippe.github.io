@@ -19,6 +19,28 @@
 <meta name="twitter:card" content="summary">
 
 <link rel="stylesheet" href="assets/style.css">
+<style>
+  /* "Abstract" toggle shown inline with the Paper / Slides links */
+  .paper .filelinks .abs-toggle {
+    font: inherit; color: var(--link); background: none; border: 0;
+    padding: 0; margin-right: 14px; cursor: pointer;
+  }
+  .paper .filelinks .abs-toggle::before { content: "\25B8  "; font-size: 0.8em; }
+  .paper .filelinks .abs-toggle[aria-expanded="true"]::before { content: "\25BE  "; }
+  .paper .filelinks .abs-toggle:hover { text-decoration: underline; }
+  .paper .abstract-text {
+    margin: 8px 0 0; font-size: 0.95rem; color: #2c2c2c;
+    border-left: 2px solid var(--rule); padding-left: 14px;
+  }
+</style>
+<script>
+  function toggleAbstract(btn) {
+    var box = document.getElementById(btn.getAttribute('aria-controls'));
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    box.hidden = open;
+  }
+</script>
 
 <!-- Structured data: tells Google which "Étienne Latulippe" this is.
      When you create your scholarly profiles, add their URLs to the "sameAs"
@@ -100,13 +122,12 @@
           Canadian Economics Association (2026); Student T2M Conference, HEC Montréal (2026); Banco de México (2026)
         </p>
         <p class="filelinks">
+          <button type="button" class="abs-toggle" aria-expanded="false" aria-controls="abs-jmp" onclick="toggleAbstract(this)">Abstract</button>
           <a href="files/jmp.pdf">Paper</a>
           <a href="files/jmp_appendix.pdf">Online Appendix</a>
           <a href="files/jmp_slides.pdf">Slides</a>
         </p>
-        <details class="abstract">
-          <summary>Abstract</summary>
-          <p>Impulse responses to monetary policy shocks identified from high-frequency
+        <p class="abstract-text" id="abs-jmp" hidden>Impulse responses to monetary policy shocks identified from high-frequency
             interest-rate surprises are large: larger than any conventional identification
             scheme delivers on the same reduced form, and largest of all when the surprise is
             first orthogonalised on pre-announcement information. Bauer and Swanson (2023)
@@ -130,7 +151,6 @@
             validity, and what identifies the direction is the dispersion of relevance within a
             block. On a panel of U.S. monetary proxies, this helps lift the first stage while
             preserving block exogeneity and returns a standard monetary contraction.</p>
-        </details>
       </div>
 
       <hr>
@@ -140,12 +160,11 @@
       <div class="paper">
         <span class="title">Purging Monetary Policy Surprises: Necessary but Not Sufficient</span>
         <p class="filelinks">
+          <button type="button" class="abs-toggle" aria-expanded="false" aria-controls="abs-purging" onclick="toggleAbstract(this)">Abstract</button>
           <a href="files/Orthogonalization_Necessary_but_not_Sufficient_Paper.pdf">Paper</a>
           <a href="files/purging_slides.pdf">Slides</a>
         </p>
-        <details class="abstract">
-          <summary>Abstract</summary>
-          <p>High-frequency monetary policy surprises are predictable from pre-announcement
+        <p class="abstract-text" id="abs-purging" hidden>High-frequency monetary policy surprises are predictable from pre-announcement
             information, and orthogonalizing them on that information has become standard
             practice. I show that this purge is necessary but not sufficient, through three
             results. First, what the purge delivers is conditional on the control set. The raw
@@ -162,7 +181,6 @@
             multi-week windows that can overlap the previous announcement, so they have already
             moved in response to the previous policy shock, and purging can remove genuine
             monetary variation, weakening the first stage.</p>
-        </details>
       </div>
 
       <hr>
