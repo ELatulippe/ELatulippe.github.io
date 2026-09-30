@@ -123,34 +123,36 @@
         </p>
         <p class="filelinks">
           <button type="button" class="abs-toggle" aria-expanded="false" aria-controls="abs-jmp" onclick="toggleAbstract(this)">Abstract</button>
+          <!-- Links hidden for now (files/jmp.pdf is still online for the link in the paper).
+               Remove the comment markers to show them again.
           <a href="files/jmp.pdf">Paper</a>
           <a href="files/jmp_appendix.pdf">Online Appendix</a>
           <a href="files/jmp_slides.pdf">Slides</a>
+          -->
         </p>
         <p class="abstract-text" id="abs-jmp" hidden>Impulse responses to monetary policy shocks identified from high-frequency
             interest-rate surprises are large: larger than any conventional identification
-            scheme delivers on the same reduced form, and largest of all when the surprise is
+            scheme delivers on the same reduced form, and larger still when the surprise is
             first orthogonalised on pre-announcement information. Bauer and Swanson (2023)
             read that enlargement as the removal of an attenuation bias. I argue that it is
-            better read as an artefact of the correction itself: a proxy identifies the response
-            to the mixture of shocks it tracks, and the correction changes that mixture. It is
-            nonetheless necessary, since the surprise is predictable from pre-announcement data,
-            but removing the predictable variation at meeting frequency takes proportionally more
-            of the first stage than of the contamination. The resulting bias can therefore become
-            larger after the correction than before it, on impact and at every subsequent horizon.
-            The constructive response is to widen the instrument window. The shock is what the
-            decision does not owe to economic conditions, and the announcement window reveals only
-            the slice the market had not already priced; instruments built from the decision better
-            preserve their first stage under the same purge. An extended Romer and Romer (2004)
-            narrative shock and a Cholesky-based instrument carry contamination of their own, but
-            retain a stronger first stage. The task is then to pool instruments while accounting
-            for the contamination they have in common. Where no single proxy is both strong and
-            clean, a hybrid estimator replaces a clean anchor with a restriction on the
-            <em>structure</em> of the contamination: pooling <em>within</em> blocks that share a
-            contamination direction buys strength, annihilating <em>across</em> blocks buys
-            validity, and what identifies the direction is the dispersion of relevance within a
-            block. On a panel of U.S. monetary proxies, this helps lift the first stage while
-            preserving block exogeneity and returns a standard monetary contraction.</p>
+            residual contamination magnified by a weaker first stage. The correction is
+            necessary, since the surprise is predictable from pre-announcement data, but at
+            meeting frequency it removes proportionally more of the first stage than of the
+            contamination. Because a proxy-SVAR divides whatever contamination survives by the
+            first stage, the bias can be larger after the correction than before it, on impact
+            and at every horizon. The constructive response is to widen the instrument window.
+            The shock is the part of the policy decision not owed to economic conditions, and
+            the announcement window reveals only the slice the market had not already priced.
+            Instruments built from the decision itself, an extended Romer and Romer (2004) shock
+            and a Cholesky-based instrument, carry contamination of their own but keep their
+            first stage under the same purge, and their responses are not enlarged. When no
+            single proxy is both strong and clean, a pool-within, annihilate-across estimator
+            replaces a clean instrument with a restriction on the <em>structure</em> of the
+            contamination: pooling <em>within</em> families of proxies that share a
+            contamination direction buys strength, annihilating <em>across</em> families buys
+            validity, and the direction is identified by the dispersion of relevance within
+            families. On a panel of sixteen U.S. monetary proxies in five families, the
+            estimator delivers a first stage of 24 and a standard monetary contraction.</p>
       </div>
 
       <hr>
@@ -161,8 +163,10 @@
         <span class="title">Purging Monetary Policy Surprises: Necessary but Not Sufficient</span>
         <p class="filelinks">
           <button type="button" class="abs-toggle" aria-expanded="false" aria-controls="abs-purging" onclick="toggleAbstract(this)">Abstract</button>
+          <!-- Links hidden for now. Remove the comment markers to show them again.
           <a href="files/Orthogonalization_Necessary_but_not_Sufficient_Paper.pdf">Paper</a>
           <a href="files/purging_slides.pdf">Slides</a>
+          -->
         </p>
         <p class="abstract-text" id="abs-purging" hidden>High-frequency monetary policy surprises are predictable from pre-announcement
             information, and orthogonalizing them on that information has become standard
