@@ -116,7 +116,11 @@
       <h2>Job Market Paper</h2>
 
       <div class="paper">
-        <span class="title">High-Frequency Monetary Policy Surprises: A Cautionary Tale</span>
+        <span class="title">When Cleaning Weakens: Pooling Instruments to Identify Monetary Policy Shocks</span>
+        <p class="presentations">
+          <span class="plabel">Previously circulated as:</span>
+          &ldquo;High-Frequency Monetary Policy Surprises: A Cautionary Tale&rdquo;
+        </p>
         <p class="presentations">
           <span class="plabel">Presentations:</span>
           Canadian Economics Association (2026); Student T2M Conference, HEC Montréal (2026); Banco de México (2026)
@@ -130,61 +134,25 @@
           <a href="files/jmp_slides.pdf">Slides</a>
           -->
         </p>
-        <p class="abstract-text" id="abs-jmp" hidden>Impulse responses to monetary policy shocks identified from high-frequency
-            interest-rate surprises are large: larger than any conventional identification
-            scheme delivers on the same reduced form, and larger still when the surprise is
-            first orthogonalised on pre-announcement information. Bauer and Swanson (2023)
-            read that enlargement as the removal of an attenuation bias. I argue that it is
-            residual contamination magnified by a weaker first stage. The correction is
-            necessary, since the surprise is predictable from pre-announcement data, but at
-            meeting frequency it removes proportionally more of the first stage than of the
-            contamination. Because a proxy-SVAR divides whatever contamination survives by the
-            first stage, the bias can be larger after the correction than before it, on impact
-            and at every horizon. The constructive response is to widen the instrument window.
-            The shock is the part of the policy decision not owed to economic conditions, and
-            the announcement window reveals only the slice the market had not already priced.
-            Instruments built from the decision itself, an extended Romer and Romer (2004) shock
-            and a Cholesky-based instrument, carry contamination of their own but keep their
-            first stage under the same purge, and their responses are not enlarged. When no
-            single proxy is both strong and clean, a pool-within, annihilate-across estimator
-            replaces a clean instrument with a restriction on the <em>structure</em> of the
-            contamination: pooling <em>within</em> families of proxies that share a
-            contamination direction buys strength, annihilating <em>across</em> families buys
-            validity, and the direction is identified by the dispersion of relevance within
-            families. On a panel of sixteen U.S. monetary proxies in five families, the
-            estimator delivers a first stage of 24 and a standard monetary contraction.</p>
-      </div>
-
-      <hr>
-
-      <h2>Working Papers</h2>
-
-      <div class="paper">
-        <span class="title">Purging Monetary Policy Surprises: Necessary but Not Sufficient</span>
-        <p class="filelinks">
-          <button type="button" class="abs-toggle" aria-expanded="false" aria-controls="abs-purging" onclick="toggleAbstract(this)">Abstract</button>
-          <!-- Links hidden for now. Remove the comment markers to show them again.
-          <a href="files/Orthogonalization_Necessary_but_not_Sufficient_Paper.pdf">Paper</a>
-          <a href="files/purging_slides.pdf">Slides</a>
-          -->
-        </p>
-        <p class="abstract-text" id="abs-purging" hidden>High-frequency monetary policy surprises are predictable from pre-announcement
-            information, and orthogonalizing them on that information has become standard
-            practice. I show that this purge is necessary but not sufficient, through three
-            results. First, what the purge delivers is conditional on the control set. The raw
-            surprise implies that output <em>rises</em> after a tightening; orthogonalization
-            corrects the sign, but the magnitude remains set-identified: the peak output response
-            varies by a factor of two across equally defensible sets of pre-announcement
-            controls. Second, predictability is not spread evenly across announcements. I
-            document a high-frequency footprint of the Fed put: the predictable component is an
-            easing response to financial deterioration, so it concentrates in easing surprises,
-            while tightenings, which typically follow ordinary good-news data, are already close
-            to clean. A symmetric projection fitted largely on the easings therefore over-cleans
-            the near-clean tightenings. Third, even the recommended purging order is not
-            innocuous at meeting frequency: the pre-announcement controls are measured over
-            multi-week windows that can overlap the previous announcement, so they have already
-            moved in response to the previous policy shock, and purging can remove genuine
-            monetary variation, weakening the first stage.</p>
+        <p class="abstract-text" id="abs-jmp" hidden>Several instruments have been proposed to measure monetary policy shocks, but none is
+            both strong and valid. The workhorse high-frequency surprise is predictable from
+            pre-announcement information. Orthogonalising it on that information weakens its first
+            stage. Any residual contamination not spanned by the orthogonalising controls is then
+            magnified by the weaker first stage, and the overall bias can be amplified. The
+            responses it identifies are larger than those of conventional schemes, with wider bands,
+            prices falling on impact and a reversal of the funds rate. I therefore widen the window
+            from the announcement to the decision, and revisit instruments that cover the whole
+            monetary policy decision rather than a narrow window around its announcement.
+            Decision-based instruments, an extended Romer and Romer (2004) instrument and a
+            recursive, Cholesky-based instrument, retain most of their first-stage strength after
+            orthogonalisation on the same pre-announcement information. To raise first-stage
+            strength further, I group the instruments into families that share a common exposure to
+            non-policy shocks, and hence common residual contamination, but differ in relevance.
+            Pooling within each family removes the common contamination and identifies the policy
+            shock from the differences in relevance, and the families combine into a single pooled
+            instrument with a stronger first stage. Applied to U.S. data, the pooled instrument is
+            strong where the orthogonalised surprise is weak, and it identifies a standard monetary
+            policy contraction.</p>
       </div>
 
       <hr>
@@ -218,7 +186,31 @@
       <h2>Work in Progress</h2>
 
       <div class="paper">
-        <span class="title">Which Proxy for Which Block? Identification and Shrinkage in Bayesian SVAR</span>
+        <span class="title">Purging Monetary Policy Surprises: Necessary but Not Sufficient</span>
+        <p class="filelinks">
+          <button type="button" class="abs-toggle" aria-expanded="false" aria-controls="abs-purging" onclick="toggleAbstract(this)">Abstract</button>
+          <!-- Links hidden for now. Remove the comment markers to show them again.
+          <a href="files/Orthogonalization_Necessary_but_not_Sufficient_Paper.pdf">Paper</a>
+          <a href="files/purging_slides.pdf">Slides</a>
+          -->
+        </p>
+        <p class="abstract-text" id="abs-purging" hidden>High-frequency monetary policy surprises are predictable from pre-announcement
+            information, and orthogonalizing them on that information has become standard
+            practice. I show that this purge is necessary but not sufficient, through three
+            results. First, what the purge delivers is conditional on the control set. The raw
+            surprise implies that output <em>rises</em> after a tightening; orthogonalization
+            corrects the sign, but the magnitude remains set-identified: the peak output response
+            varies by a factor of two across equally defensible sets of pre-announcement
+            controls. Second, predictability is not spread evenly across announcements. I
+            document a high-frequency footprint of the Fed put: the predictable component is an
+            easing response to financial deterioration, so it concentrates in easing surprises,
+            while tightenings, which typically follow ordinary good-news data, are already close
+            to clean. A symmetric projection fitted largely on the easings therefore over-cleans
+            the near-clean tightenings. Third, even the recommended purging order is not
+            innocuous at meeting frequency: the pre-announcement controls are measured over
+            multi-week windows that can overlap the previous announcement, so they have already
+            moved in response to the previous policy shock, and purging can remove genuine
+            monetary variation, weakening the first stage.</p>
       </div>
 
       <div class="paper">
@@ -226,7 +218,7 @@
       </div>
 
       <div class="footer">
-        Last updated September 2026.
+        Last updated October 2026.
       </div>
     </main>
 
